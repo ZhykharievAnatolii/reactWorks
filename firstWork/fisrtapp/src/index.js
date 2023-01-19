@@ -20,31 +20,69 @@
 
 // Вместо class в верстке используется  className
 
+// const header=(
+//     <header>
+//         <a href="">Logo</a>
+//     </header>
+// )
+//
+// const number=5;
+// const type='succes';
+// const firstReactElement=(
+//     <div>
+//         {header}
+//     <span className={ type==="succes"?'succes':'error'}>
+//         {number}
+//         <h1>Inner</h1>
+//     </span>
+//     </div>
+// );
+// const secondReactElement=createElement('div',null,'Hello,world!');
+// В реакте существуют специальные функции, которые называются компонентами,
+
 import React,{createElement} from "react";
 import {createRoot} from 'react-dom/client';
 
-const header=(
-    <header>
-        <a href="">Logo</a>
-    </header>
-)
+const data=[
+    {
+        id:1,
+        name:'Anatolii',
+        position:'Fronend'
+    },
+    {
+        id:2,
+        name:'Bohdan',
+        position:'Backend'
+    },
+    {
+        id:3,
+        name:'Yura',
+        position:'Design'
+    }
+];
+function Card({name,position}) {
+    // const card=
 
-const number=5;
-const type='succes';
-const firstReactElement=(
-    <div>
-        {header}
-    <span className={ type==="succes"?'succes':'error'}>
-        {number}
-        <h1>Inner</h1>
-    </span>
-    </div>
-);
+        return (
+        <li>
+            <h2>
+                {name}
+            </h2>
+            <p>
+                {position}
+            </p>
+        </li>
+    )
+}
 
 
+// все компоненты называем с большой буквы, функция должна возвращать верстку
 
 
-
-    // const secondReactElement=createElement('div',null,'Hello,world!');
 const root= document.querySelector('#root');
-createRoot(root).render(firstReactElement);
+createRoot(root).render(
+    <ul>
+        <Card name={data[0].name} position={data[0].position}/>
+        <Card name={data[1].name} position={data[1].position}/>
+        <Card name={data[2].name} position={data[2].position}/>
+    </ul>);
