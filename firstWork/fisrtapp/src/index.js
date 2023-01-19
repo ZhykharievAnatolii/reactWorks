@@ -18,10 +18,33 @@
 
 // jsx- микс написания в переменой js , css, html
 
-import React from "react";
+// Вместо class в верстке используется  className
+
+import React,{createElement} from "react";
 import {createRoot} from 'react-dom/client';
 
-const firstReactElement=<div>Hello</div>;
-    const secondReactElement=
+const header=(
+    <header>
+        <a href="">Logo</a>
+    </header>
+)
+
+const number=5;
+const type='succes';
+const firstReactElement=(
+    <div>
+        {header}
+    <span className={ type==="succes"?'succes':'error'}>
+        {number}
+        <h1>Inner</h1>
+    </span>
+    </div>
+);
+
+
+
+
+
+    // const secondReactElement=createElement('div',null,'Hello,world!');
 const root= document.querySelector('#root');
 createRoot(root).render(firstReactElement);
