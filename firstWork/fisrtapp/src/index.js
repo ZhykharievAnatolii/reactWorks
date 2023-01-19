@@ -80,9 +80,31 @@ function Card({name,position}) {
 
 
 const root= document.querySelector('#root');
-createRoot(root).render(
-    <ul>
-        <Card name={data[0].name} position={data[0].position}/>
-        <Card name={data[1].name} position={data[1].position}/>
-        <Card name={data[2].name} position={data[2].position}/>
-    </ul>);
+// createRoot(root).render(
+//     <ul>
+//         <Card name={data[0].name} position={data[0].position}/>
+//         <Card name={data[1].name} position={data[1].position}/>
+//         <Card name={data[2].name} position={data[2].position}/>
+//     </ul>);
+
+    //
+    // return <Card name={name} position={position}/>})
+// createRoot(root).render(
+//     <ul>
+//         {
+//             data.map(({position,name, id})=>{
+//             return <Card name={name} position={position}/>
+//             })
+//         }
+//     </ul>)
+const renderedArr= data.map(({position,name, id})=>{
+    return <Card name={name} position={position}/>
+})
+
+const additional=[<Card name='Alina' position='Devops'/>, <Card name='Oleksiy' position='Manager'/>]
+
+    createRoot(root).render(
+        <ul>
+            {[...renderedArr, ...additional]}
+        </ul>)
+// Для перебора елементов для перерисовки не подойдет forEach
