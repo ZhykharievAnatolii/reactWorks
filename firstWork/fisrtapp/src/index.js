@@ -97,14 +97,14 @@ const root= document.querySelector('#root');
 //             })
 //         }
 //     </ul>)
-const renderedArr= data.map(({position,name, id})=>{
-    return <Card name={name} position={position}/>
-})
+// const renderedArr=
 
-const additional=[<Card name='Alina' position='Devops'/>, <Card name='Oleksiy' position='Manager'/>]
+// const additional=[<Card name='Alina' position='Devops'/>, <Card name='Oleksiy' position='Manager'/>]
 
     createRoot(root).render(
         <ul>
-            {[...renderedArr, ...additional]}
+            {data.map(({position,name, id})=>{
+            return <Card name={name} position={position} key={id}/>
+        })}
         </ul>)
 // Для перебора елементов для перерисовки не подойдет forEach
