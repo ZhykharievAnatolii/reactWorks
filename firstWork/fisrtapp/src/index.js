@@ -104,22 +104,48 @@ const root= document.querySelector('#root');
 
 // const obj= data[0]
 
-const Header=(props)=> {
+const Header=({logoText,links})=> {
+    // console.log(props)
     return(
         <header>
             <div className="container">
-                <a href="" className="logo">{}</a>
+                <a href="" className="logo">{logoText}</a>
+                <nav>
+                    <ul>
+                        {Object.values(links).map(({label,href})=>{
+                            return(
+                                <li key={Math.random()}>
+                                    <a href={href}>{label}</a>
+                                </li>
+                            )
+                        })}
+                    </ul>
+                </nav>
             </div>
         </header>
     )
 }
 
+const links={
+    about:{
+    label:'About',
+        href:'/about'
+},
+    contact:{
+        label:'Contact',
+        href:'/contact'
+    }
+}
 
     createRoot(root).render(
+        <>
+            <Header logoText="Anatolii dashboard" links={links}/>
         <ul>
             {/*{obj}*/}
             {data.map(({position,name, id})=>{
             return <Card name={name} position={position} key={id}/>
         })}
-        </ul>)
+        </ul>
+        </>
+            )
 // Для перебора елементов для перерисовки не подойдет forEach
