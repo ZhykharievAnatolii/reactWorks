@@ -100,9 +100,24 @@ const root= document.querySelector('#root');
 // const renderedArr=
 
 // const additional=[<Card name='Alina' position='Devops'/>, <Card name='Oleksiy' position='Manager'/>]
+// Нельзя вставить в отрисовку переменную , которая является не примитивом и не массивом
+
+// const obj= data[0]
+
+const Header=(props)=> {
+    return(
+        <header>
+            <div className="container">
+                <a href="" className="logo">{}</a>
+            </div>
+        </header>
+    )
+}
+
 
     createRoot(root).render(
         <ul>
+            {/*{obj}*/}
             {data.map(({position,name, id})=>{
             return <Card name={name} position={position} key={id}/>
         })}
