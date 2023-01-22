@@ -1,5 +1,6 @@
 import React from "react";
 import {Header} from "./Header";
+import {List} from "./List";
 
 export const Application=()=>
     <div className='Wrapper'>
@@ -15,4 +16,5 @@ export const Application=()=>
                 },
         ]
         }/>
+        <List/>
     </div>
