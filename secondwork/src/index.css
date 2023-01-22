@@ -1,6 +1,11 @@
 @import "bootstrap";
-ul{
+ul,li{
     list-style: none;
+}
+li{
+    background-color: aqua;
+    padding: 10px;
+    border-radius: 8px;
 }
 .header{
     background-color:aqua;
