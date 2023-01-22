@@ -1,1 +1,9 @@
 @import "bootstrap";
+ul{
+    list-style: none;
+}
+.header{
+    bacground-color:aqua;
+    padding:20px 0;
+
+}

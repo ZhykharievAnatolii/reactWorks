@@ -3,5 +3,5 @@ import {Header} from "./Header";
 
 export const Application=()=>
     <div className='Wrapper'>
-       <Header/>
+        <Header logoText="Application" navItems={[]}/>
     </div>
