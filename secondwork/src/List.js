@@ -15,8 +15,10 @@ export const List = () => {
 
         }
     ]
+
   return(
       <div className="container mt-4">
+          <div>{}</div>
           <div className="row">
               {
                   data.map(({id,title})=>{
