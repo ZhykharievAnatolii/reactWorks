@@ -4,14 +4,14 @@ import {List} from "./List";
 
 const Counter=()=>{
         const [count, setCount]=useState(1);
-        setInterval(()=>{
-            setCount(count+1)
-        },1000)
+        // setInterval(()=>{
+        //     setCount(count+1)
+        // },1000)
         // const count=1;
     return <div>
-        <button onClick={()=>console.log('minus click')}>-</button>
+        <button onClick={()=>setCount(count-1)}>-</button>
             {count}
-        <button onClick={()=>console.log('plus click')}>+</button>
+        <button onClick={()=>setCount(count+1)}>+</button>
         </div>};
 
 

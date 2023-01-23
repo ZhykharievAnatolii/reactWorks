@@ -1,20 +1,14 @@
-import React from "react";
+import React, {useState} from "react";
 import {Listitem} from "./Listitem";
+import {faker} from '@faker-js/faker'
+
 
 export const List = () => {
-
-    const data=[
-        {
-            id:2,
-            title:'First',
-
-        },
-        {
-            id:4,
-            title:'Second',
-
-        }
-    ]
+const [data,setData]=useState([]);
+window.setData=setData();
+function handleAdd() {
+    
+}
 
   return(
       <div className="container mt-4">
@@ -26,6 +20,7 @@ export const List = () => {
                   })
               }
           </div>
+          <button onClick={handleAdd}>Add</button>
       </div>
   )
 
