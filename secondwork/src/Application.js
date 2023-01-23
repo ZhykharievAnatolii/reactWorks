@@ -1,6 +1,25 @@
 import React , {useState} from "react";
 import {Header} from "./Header";
 import {List} from "./List";
+import {faker} from '@faker-js/faker'
+
+const Undefined=()=>{
+    const [profile,setProfile]=useState({email:faker.random.word(), username:faker.random.word()})
+
+
+    return(
+        <div>
+            <p>
+                Email:{profile.email}
+            </p>
+            <p>
+                Username:{profile.username}
+            </p>
+        </div>
+    )
+}
+
+
 
 const Counter=()=>{
         const [count, setCount]=useState(1);
@@ -19,7 +38,7 @@ const Counter=()=>{
 
 export const Application=()=>
     <div className='Wrapper'>
-        <Counter></Counter>
+       <Undefined/>
         <Header logoText="Application" navItems={
             [
                 {
