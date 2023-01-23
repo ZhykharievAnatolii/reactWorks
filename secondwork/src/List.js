@@ -5,9 +5,12 @@ import {faker} from '@faker-js/faker'
 
 export const List = () => {
 const [data,setData]=useState([]);
-window.setData=setData();
 function handleAdd() {
-    
+    setData([...data,{
+        id: faker.random.numeric(),
+        title: faker.random.word()
+
+    }])
 }
 
   return(
@@ -16,7 +19,12 @@ function handleAdd() {
           <div className="row">
               {
                   data.map(({id,title})=>{
-                      return <Listitem key={id} id={id} title={title}/>
+                      return(
+                      <Listitem handleClick={()=>{
+                          const dataItem=data.find((item)=>item.id===id)
+                          setData(data.filter((item)=>item!==dataItem))
+                      }} key={id} id={id} title={title}/>
+                      );
                   })
               }
           </div>
